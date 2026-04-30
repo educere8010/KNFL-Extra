@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>경남외고 추가지문 - Nick Vujicic | 에듀케레 영수학원</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:wght@600;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #1a2744;
+    --navy-light: #2c3e60;
+    --gold: #c8a84b;
+    --gold-light: #e0c674;
+    --bg: #f7f5f0;
+    --paper: #ffffff;
+    --text: #2c3e50;
+    --muted: #6b7280;
+    --green-bg: #e2efda;
+    --green-text: #375623;
+    --yellow-bg: #fff2cc;
+    --yellow-text: #7f6000;
+    --red-bg: #fde0e0;
+    --red-text: #842029;
+    --border: #e5e7eb;
+  }
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+  .header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: white;
+    padding: 28px 24px;
+    text-align: center;
+    border-bottom: 4px solid var(--gold);
+  }
+  .header .academy {
+    font-size: 13px;
+    color: var(--gold-light);
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .header h1 {
+    font-family: 'Playfair Display', 'Noto Sans KR', serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .header .subtitle {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--gold-light);
+  }
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 16px 60px;
+  }
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 20px;
+    background: var(--paper);
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .tab {
+    flex: 1;
+    min-width: 130px;
+    padding: 12px 14px;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s;
+    text-align: center;
+  }
+  .tab:hover { background: #f0ede4; color: var(--navy); }
+  .tab.active {
+    background: var(--navy);
+    color: var(--gold-light);
+    font-weight: 700;
+  }
+  .panel { display: none; }
+  .panel.active { display: block; animation: fadeIn 0.3s; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+  .card {
+    background: var(--paper);
+    border-radius: 10px;
+    padding: 28px 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    margin-bottom: 20px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', 'Noto Sans KR', serif;
+    font-size: 22px;
+    color: var(--navy);
+    border-bottom: 3px solid var(--gold);
+    padding-bottom: 10px;
+    margin-bottom: 24px;
+    display: inline-block;
+  }
+  /* ===== 전문 ===== */
+  .full-text {
+    font-family: 'EB Garamond', serif;
+    font-size: 17px;
+    line-height: 1.9;
+    background: #fdfcf7;
+    border: 2px solid var(--navy);
+    border-left: 6px solid var(--gold);
+    padding: 24px 28px;
+    border-radius: 4px;
+    color: #1a1a1a;
+  }
+  .full-text p { margin-bottom: 14px; text-indent: 1.5em; }
+  .full-text p:first-child { text-indent: 0; }
+  .full-text .source {
+    text-align: right;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 10px;
+  }
+  /* ===== 문장 분석 ===== */
+  .sentence-block {
+    margin-bottom: 28px;
+    padding-bottom: 24px;
+    border-bottom: 1px dashed var(--border);
+  }
+  .sentence-block:last-child { border-bottom: none; }
+  .sent-num {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: var(--navy);
+    color: var(--gold-light);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-weight: 700;
+    margin-right: 10px;
+    font-size: 15px;
+  }
+  .eng-box {
+    font-family: 'EB Garamond', serif;
+    font-size: 17px;
+    background: #fafaf7;
+    border: 1px solid #cccccc;
+    border-left: 5px solid var(--navy);
+    padding: 14px 18px;
+    margin: 10px 0 12px;
+    border-radius: 3px;
+    line-height: 1.7;
+  }
+  .literal {
+    background: #f0f4fa;
+    padding: 12px 16px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    font-size: 14.5px;
+    line-height: 1.8;
+  }
+  .literal-en {
+    color: var(--navy);
+    font-family: 'EB Garamond', serif;
+    font-size: 15px;
+    margin-bottom: 6px;
+  }
+  .literal-ko {
+    color: var(--text);
+  }
+  .grammar-list {
+    margin-top: 8px;
+    padding-left: 4px;
+  }
+  .grammar-item {
+    margin-bottom: 10px;
+    padding: 10px 14px;
+    background: var(--yellow-bg);
+    border-left: 4px solid var(--gold);
+    border-radius: 4px;
+    font-size: 14.5px;
+  }
+  .grammar-item .gtitle {
+    color: var(--yellow-text);
+    font-weight: 700;
+    margin-bottom: 3px;
+  }
+  .grammar-item .gex {
+    color: var(--text);
+    margin-bottom: 3px;
+  }
+  .grammar-item .gpoint {
+    color: #b87000;
+    font-size: 13.5px;
+    font-style: italic;
+  }
+  /* ===== 핵심단어 ===== */
+  .vocab-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .vocab-item {
+    display: grid;
+    grid-template-columns: 180px 1fr 70px 1fr;
+    gap: 14px;
+    padding: 12px 16px;
+    background: var(--green-bg);
+    border-left: 4px solid var(--green-text);
+    border-radius: 4px;
+    font-size: 14.5px;
+    align-items: center;
+  }
+  .vocab-word {
+    font-family: 'EB Garamond', serif;
+    font-weight: 700;
+    color: var(--green-text);
+    font-size: 17px;
+  }
+  .vocab-meaning { color: var(--text); }
+  .vocab-pos {
+    font-style: italic;
+    color: var(--muted);
+    font-size: 13.5px;
+  }
+  .vocab-deriv {
+    font-family: 'EB Garamond', serif;
+    color: var(--navy);
+    font-size: 14px;
+  }
+  @media (max-width: 700px) {
+    .vocab-item {
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+  }
+  /* ===== 전문해석 ===== */
+  .translation {
+    font-size: 15.5px;
+    line-height: 2;
+    background: #fdfcf7;
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--gold);
+    padding: 22px 26px;
+    border-radius: 4px;
+  }
+  .translation p { margin-bottom: 14px; text-indent: 1.2em; }
+  .translation p:first-child { text-indent: 0; }
+  /* ===== 주제·요지 ===== */
+  .topic-section {
+    margin-bottom: 22px;
+  }
+  .topic-label {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--gold-light);
+    padding: 4px 14px;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .topic-content {
+    padding: 14px 18px;
+    background: #f7f5f0;
+    border-left: 4px solid var(--gold);
+    border-radius: 4px;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  .structure-flow {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .flow-step {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 14px;
+    padding: 12px 16px;
+    background: #fdfcf7;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    align-items: center;
+  }
+  .flow-step .stage {
+    background: var(--navy);
+    color: var(--gold-light);
+    text-align: center;
+    padding: 6px 0;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 13px;
+  }
+  /* ===== 변형문제 ===== */
+  .quiz-block {
+    margin-bottom: 28px;
+    padding: 20px 22px;
+    background: #fdfcf7;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .quiz-num {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--gold-light);
+    padding: 4px 14px;
+    border-radius: 14px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .quiz-q {
+    font-size: 15.5px;
+    font-weight: 500;
+    margin-bottom: 14px;
+    line-height: 1.7;
+  }
+  .quiz-passage {
+    font-family: 'EB Garamond', serif;
+    font-size: 15.5px;
+    line-height: 1.85;
+    background: white;
+    padding: 14px 18px;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--navy);
+    border-radius: 4px;
+    margin-bottom: 14px;
+  }
+  .underline {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    font-weight: 600;
+  }
+  .u1 { text-decoration-color: #c0392b; }
+  .u2 { text-decoration-color: #c0392b; }
+  .u3 { text-decoration-color: #c0392b; }
+  .u4 { text-decoration-color: #c0392b; }
+  .u5 { text-decoration-color: #c0392b; }
+  .options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .opt {
+    padding: 12px 16px;
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14.5px;
+    text-align: left;
+    transition: all 0.2s;
+    line-height: 1.6;
+  }
+  .opt:hover {
+    border-color: var(--gold);
+    background: #fdfcf7;
+  }
+  .opt.correct {
+    background: var(--green-bg);
+    border-color: var(--green-text);
+    color: var(--green-text);
+    font-weight: 600;
+  }
+  .opt.wrong {
+    background: var(--red-bg);
+    border-color: var(--red-text);
+    color: var(--red-text);
+  }
+  .opt.reveal {
+    background: var(--green-bg);
+    border-color: var(--green-text);
+    color: var(--green-text);
+    font-weight: 600;
+  }
+  .opt:disabled { cursor: default; }
+  .feedback {
+    display: none;
+    margin-top: 12px;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .feedback.show { display: block; }
+  .feedback.correct {
+    background: var(--green-bg);
+    color: var(--green-text);
+    border-left: 4px solid var(--green-text);
+  }
+  .feedback.wrong {
+    background: var(--red-bg);
+    color: var(--red-text);
+    border-left: 4px solid var(--red-text);
+  }
+  .reset-btn {
+    margin-top: 10px;
+    padding: 6px 14px;
+    background: var(--navy);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: inherit;
+  }
+  .reset-btn:hover { background: var(--navy-light); }
+  .order-block {
+    background: white;
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin-bottom: 8px;
+    font-family: 'EB Garamond', serif;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+  .order-block .label {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--gold-light);
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    border-radius: 50%;
+    font-weight: 700;
+    margin-right: 10px;
+    font-family: 'Noto Sans KR';
+    font-size: 13px;
+  }
+  /* 서술형 */
+  .essay-block {
+    margin-top: 30px;
+    padding: 20px 22px;
+    background: #fdfcf7;
+    border: 2px dashed var(--gold);
+    border-radius: 8px;
+  }
+  .essay-condition {
+    font-size: 13.5px;
+    color: var(--muted);
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+  .essay-prompt {
+    font-size: 15px;
+    margin-bottom: 12px;
+    line-height: 1.7;
+  }
+  .essay-blank {
+    display: inline-block;
+    border-bottom: 2px solid var(--navy);
+    min-width: 140px;
+    height: 22px;
+    margin: 0 4px;
+  }
+  .essay-input {
+    width: 100%;
+    min-height: 80px;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14.5px;
+    line-height: 1.7;
+    resize: vertical;
+  }
+  .essay-input:focus {
+    outline: none;
+    border-color: var(--gold);
+  }
+  .show-answer-btn {
+    margin-top: 12px;
+    padding: 8px 18px;
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    font-family: inherit;
+  }
+  .show-answer-btn:hover { background: var(--gold-light); }
+  .model-answer {
+    display: none;
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: var(--green-bg);
+    border-left: 4px solid var(--green-text);
+    border-radius: 4px;
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: var(--green-text);
+  }
+  .model-answer.show { display: block; }
+  .model-answer .ma-label {
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: block;
+  }
+  /* 푸터 */
+  .footer {
+    text-align: center;
+    padding: 30px 16px 20px;
+    color: var(--muted);
+    font-size: 13px;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+  .footer .acad {
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="academy">EDUCARE ENGLISH &amp; MATH ACADEMY · 에듀케레 영수학원</div>
+  <h1>경남외고 추가지문</h1>
+  <div class="subtitle">Nick Vujicic — Disarm Your Limits</div>
+</div>
+
+<div class="container">
+
+  <div class="tabs">
+    <button class="tab active" onclick="showTab(event, 'p1')">① 전문</button>
+    <button class="tab" onclick="showTab(event, 'p2')">② 문장 상세 분석</button>
+    <button class="tab" onclick="showTab(event, 'p3')">③ 핵심단어·표현</button>
+    <button class="tab" onclick="showTab(event, 'p4')">④ 전문해석</button>
+    <button class="tab" onclick="showTab(event, 'p5')">⑤ 주제·요지</button>
+    <button class="tab" onclick="showTab(event, 'p6')">⑥ 변형문제</button>
+  </div>
+
+  <!-- ===== ① 전문 ===== -->
+  <div id="p1" class="panel active">
+    <div class="card">
+      <div class="section-title">① 전문 (Full Text)</div>
+      <div class="full-text">
+        <p>Nick Vujicic was born in Melbourne, Australia in 1982. Nick was born without arms and legs; he had no legs, but two small feet, one of which had two toes. Initially, a Victoria state law prevented Nick from attending a mainstream school due to his physical disability, in spite of a lack of mental weakness. However, Nick became one of the first physically disabled students integrated into a mainstream school once those laws changed. Unfortunately, his lack of limbs made him a target for school bullies, and he fell into great despair. However, a key turning point came when his mother showed him a newspaper article about a man dealing with a severe disability. Nick realized he wasn't unique in his struggles and began to embrace his lack of limbs. After this, Nick realized his accomplishments could inspire others and became grateful for his life.</p>
+
+        <p>Nick gradually figured out how to live a full life without limbs, adapting many of the daily skills limbed people accomplish without thinking. Nick writes with two toes on his left foot and a special grip that slides onto his big toe. He knows how to use a computer and can type up to 45 words per minute using the 'heel and toe' method. He has also learned to throw a tennis ball, get a glass of water, comb his hair, brush his teeth, and answer the phone, in addition to participating in golf, swimming, and even sky-diving.</p>
+
+        <p>Born without arms or legs, Nick overcame his disabilities to live a rich, independent, fulfilling, and 'ridiculously good' life while serving as a role model for anyone seeking true happiness. Now an internationally successful motivational speaker, Nick eagerly spreads his central message: the most important goal is to find your life's purpose and to never give up, despite whatever difficulties or seemingly impossible odds stand in your way.</p>
+
+        <div class="source">— adapted from https://goo.gl/BdcR2V</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ② 문장 상세 분석 ===== -->
+  <div id="p2" class="panel">
+    <div class="card">
+      <div class="section-title">② 문장 상세 분석 (전체 14문장)</div>
+
+      <!-- ①문장 -->
+      <div class="sentence-block">
+        <div><span class="sent-num">①</span><strong>출생 정보</strong></div>
+        <div class="eng-box">Nick Vujicic was born in Melbourne, Australia in 1982.</div>
+        <div class="literal">
+          <div class="literal-en">Nick Vujicic was born / in Melbourne, Australia / in 1982.</div>
+          <div class="literal-ko">Nick Vujicic은 태어났다 / 호주 멜버른에서 / 1982년에.</div>
+        </div>
+        <div class="grammar-list">
+          <div class="grammar-item">
+            <div class="gtitle">◆ 수동태 (be + p.p.)</div>
+            <div class="gex">▶ <em>was born</em>: 사람이 '태어나는' 행위는 능동이 아닌 수동으로 표현</div>
+            <div class="gpoint">★ '태어났다'를 <em>bore</em>(과거 능동) 또는 <em>has been born</em>(완료수동)로 잘못 쓰지 않도록 주의 — 항상 <em>be born</em></div>
+          </div>
+          <div class="grammar-item">
+            <div class="gtitle">◆ 장소·시간 전치사구의 어순</div>
+            <div class="gex">▶ <em>in Melbourne, Australia / in 1982</em>: 일반적으로 '장소 → 시간' 순으로 배치</div>
+            <div class="gpoint">★ 어순 도치 문제 또는 시간·장소 부사구를 동시에 다루는 어법 문제에서 빈출</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ②문장 -->
+      <div class="sentence-block">
+        <div><span class="sent-num">②</span><strong>신체 상태 묘사</strong></div>
+        <div class="eng-box">Nick was born without arms and legs; he had no legs, but two small feet, one of which had two toes.</div>
+        <div class="literal">
+          <div class="literal-en">Nick was born / without arms and legs; / he had no legs, / but two small feet, / one of which had two toes.</div>
+          <div class="literal-ko">Nick은 태어났다 / 팔과 다리 없이; / 그는 다리는 없었지만, / 두 개의 작은 발을 가졌고, / 그중 하나는 두 발가락이 있었다.</div>
+        </div>
+        <div class="grammar-list">
+          <div class="grammar-item">
+            <div class="gtitle">◆ 「수량 + of + 관계대명사」 (one of which)</div>
+            <div class="gex">▶ <em>two small feet, one of which had two toes</em>: 선행사(two small feet) 중 '하나'가 두 발가락을 가짐</div>
+            <div class="gpoint">★ <em>one of them</em>(독립절) ↔ <em>one of which</em>(관계절)의 차이를 묻는 어법 빈출 포인트</div>
+          </div>
+          <div class="grammar-item">
+            <div class="gtitle">◆ 세미콜론(;)의 용법</div>
+            <div class="gex">▶ <em>without arms and legs; he had no legs</em>: 의미상 밀접한 두 독립절을 연결</div>
+            <div class="gpoint">★ 세미콜론은 등위접속사 없이 두 절을 잇는 기능 — 콤마(,)와 혼동 금지</div>
+          </div>
+          <div class="grammar-item">
+            <div class="gtitle">◆ 전치사 without + 명사</div>
+            <div class="gex">▶ <em>without arms and legs</em>: '~없이'라는 부재의 의미</div>
+            <div class="gpoint">★ <em>without -ing</em>(동명사 동반)와 구분; 여기서는 명사구 동반</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ③문장 -->
+      <div class="sentence-block">
+        <div><span class="sent-num">③</span><strong>입학 거부의 배경</strong></div>
+        <div class="eng-box">Initially, a Victoria state law prevented Nick from attending a mainstream school due to his physical disability, in spite of a lack of mental weakness.</div>
+        <div class="literal">
+          <div class="literal-en">Initially, / a Victoria state law / prevented Nick / from attending a mainstream school / due to his physical disability, / in spite of a lack of mental weakness.</div>
+          <div class="literal-ko">처음에는, / Victoria 주 법이 / Nick을 막았다 / 일반 학교에 다니는 것을 / 그의 신체적 장애 때문에, / 정신적 결함이 없음에도 불구하고.</div>
+        </div>
+        <div class="grammar-list">
+          <div class="grammar-item">
+            <div class="gtitle">◆ prevent A from -ing (A가 ~하지 못하게 하다)</div>
+            <div class="gex">▶ <em>prevented Nick from attending</em>: 금지·방해 동사의 대표 구문</div>
+            <div class="gpoint">★ 같은 구조의 동사: <em>stop, keep, prohibit, discourage</em> — 모두 from + 동명사. <em>to부정사</em>로 쓰면 오답</div>
+          </div>
+          <div class="grammar-item">
+            <div class="gtitle">◆ due to vs. in spite of</div>
+            <div class="gex">▶ <em>due to ~</em>(이유: ~ 때문에) ↔ <em>in spite of ~</em>(양보: ~에도 불구하고)</div>
+            <div class="gpoint">★ 두 표현 뒤에는 모두 <em>명사(구)</em>가 와야 함 — 절(주어+동사)이 오면 오답</div>
+          </div>
+          <div class="grammar-item">
+            <div class="gtitle">◆ 부사 Initially의 위치</div>
+            <div class="gex">▶ 문두에 위치하여 시간적 순서('처음에는')를 강조</div>
+            <div class="gpoint">★ 뒤 문장의 <em>once those laws changed</em>(법이 바뀌자)와 시간적 대비 형성</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ④문장 -->
+      <div class="sentence-block">
+        <div><span class="sent-num">④</span><strong>법 개정 후 입학</strong></div>
+        <div class="eng-box">However, Nick became one of the first physically disabled students integrated into a mainstream school once those laws changed.</div>
+        <div class="literal">
+          <div class="literal-en">However, / Nick became / one of the first physically disabled students / integrated into a mainstream school / once those laws changed.</div>
+          <div class="literal-ko">그러나, / Nick은 ~이 되었다 / 최초의 신체 장애 학생들 중 한 명이 / 일반 학교에 통합된 / 그 법이 바뀌자.</div>
+        </div>
+        <div class="grammar-list">
+          <div class="grammar-item">
+            <div class="gtitle">◆ 과거분사 후치수식 (integrated)</div>
+            <div class="gex">▶ <em>students integrated into a mainstream school</em>: 「students who were integrated」에서 「관계대명사+be」 생략</div>
+            <div class="gpoint">★ 어법 문제에서 <em>integrating</em>(능동)으로 바꿔놓는 함정 — 학생은 '통합된' 대상이므로 수동 분사가 정답</div>
+          </div>
+          <div class="grammar-item">
+            <div class="gtitle">◆ 접속사 once (~하자마자, 일단 ~하면)</div>
+            <div class="gex">▶ <em>once those laws changed</em>: 시간·조건의 부사절 접속사</div>
+            <div class="gpoint">★ <em>once</em>는 부사('한때')와 접속사 두 용법 — 뒤에 절이 오면 접속사로 판단</div>
+          </div>
+          <div class="grammar-item">
+            <div class="gtitle">◆ one of the + 최상급 + 복수명사</div>
+            <div class="gex">▶ <em>one of the first ... students</em>: '가장 ~한 ... 중 하나'</div>
+            <div class="gpoint">★ <em>students</em>는 반드시 <strong>복수형</strong>; 단수형 사용 시 어법 오류</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ⑤문장 -->
+      <div class="sentence-block">
+        <div><span class="sent-num">⑤</span><strong>학교 폭력과 절망</strong></div>
+        <div class="eng-box">Unfortunately, his lack of limbs made him a target for school bullies, and he fell into great despair.</div>
+        <div class="literal">
+          <div class="literal-en">Unfortunately, / his lack of limbs / made him a target / for school bullies, / and he fell into great despair.</div>
+          <div class="literal-ko">불행히도, / 그의 사지 부재가 / 그를 표적으로 만들었다 / 학교 괴롭히는 자들의 / 그리고 그는 깊은 절망에 빠졌다.</div>
+        </div>
+        <div class="grammar-list">
+          <div class="grammar-item">
+            <div class="gtitle">◆ 5형식: make + 목적어 + 명사 보어</div>
+            <div class="gex">▶ <em>made him a target</em>: 「make + O + N」 = 'O를 N으로 만들다'</div>
+            <div class="gpoint">★ 보어 자리에 형용사·명사 모두 올 수 있음 — 부사가 오면 오답</div>
+          </div>
+          <div class="grammar-item">
+            <div class="gtitle">◆ fall into + 추상명사 (~한 상태에 빠지다)</div>
+            <div class="gex">▶ <em>fell into great despair</em>: 'despair, sleep, silence' 등과 결합하는 관용 표현</div>
+            <div class="gpoint">★ <em>fall in</em>(빠지다, 사랑에 빠지다)와 구분 — 전치사 차이로 의미가 달라짐</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ⑥문장 -->
+      <div class="sentence-block">
+        <div><span class="sent-num">⑥</span><strong>전환점 — 어머니의 신문 기사</strong></div>
+        <div class="eng-box">However, a key turning point came when his mother showed him a newspaper article about a man dealing with a severe disability.</div>
+        <div class="literal">
+          <div class="literal-en">However, / a key turning point came / when his mother showed him / a newspaper article / about a man / dealing with a severe disability.</div>
+          <div class="literal-ko">그러나, / 결정적인 전환점이 왔다 / 그의 어머니가 그에게 보여줬을 때 / 신문 기사를 / 한 남자에 관한 / 심각한 장애에 대처하고 있는.</div>
+        </div>
+        <div class="grammar-list">
+          <div class="grammar-item">
+            <div class="gtitle">◆ 4형식: show + IO + DO</div>
+            <div class="gex">▶ <em>showed him a newspaper article</em>: 'him'(간접목적어) + 'a newspaper article'(직접목적어)</div>
+            <div class="gpoint">★ 3형식 전환 시: <em>showed a newspaper article to him</em> — 전치사 <strong>to</strong> 사용 동사</div>
+          </div>
+          <div class="grammar-item">
+            <div class="gtitle">◆ 현재분사 후치수식 (dealing with ~)</div>
+            <div class="gex">▶ <em>a man dealing with a severe disability</em>: 「a man who is dealing with」에서 축약</div>
+            <div class="gpoint">★ <em>man</em>이 능동적으로 '대처하는' 행위자이므로 <strong>-ing</strong>(현재분사) 사용. <em>dealt</em>(과거분사)로 바꾸면 오답</div>
+          </div>
+          <div class="grammar-item">
+            <div class="gtitle">◆ 시간 부사절 when</div>
+            <div class="gex">▶ <em>when his mother showed him ...</em>: 주절('전환점이 왔다')의 시점을 설명</div>
+            <div class="gpoint">★ when절은 부사절 — 이때 시제는 주절과 일치(both past)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ⑦문장 -->
+      <div class="sentence-block">
+        <div><span class="sent-num">⑦</span><strong>자기 인식의 변화</strong></div>
+        <div class="eng-box">Nick realized he wasn't unique in his struggles and began to embrace his lack of limbs.</div>
+        <div class="literal">
+          <div class="literal-en">Nick realized / (that) he wasn't unique / in his struggles / and began to embrace / his lack of limbs.</div>
+          <div class="literal-ko">Nick은 깨달았다 / 자신이 유일하지 않다는 것을 / 자신의 어려움 속에서 / 그리고 받아들이기 시작했다 / 자신의 사지 부재를.</div>
+        </div>
+        <div class="grammar-list">
+          <div class="grammar-item">
+            <div class="gtitle">◆ 명사절 접속사 that 생략</div>
+            <div class="gex">▶ <em>realized (that) he wasn't unique</em>: 인지·전달동사(realize, know, think) 뒤의 that은 생략 가능</div>
+            <div class="gpoint">★ 어법 문제에서 that 자리에 <em>which</em>나 <em>what</em>을 넣어 함정 — 완전한 절이면 that(또는 생략)</div>
+          </div>
+          <div class="grammar-item">
+            <div class="gtitle">◆ begin + to부정사/동명사</div>
+            <div class="gex">▶ <em>began to embrace</em>: <em>to부정사</em>와 <em>-ing</em> 모두 가능 (의미 차이 거의 없음)</div>
+            <div class="gpoint">★ <em>begin, start, like, love, hate, prefer</em> 등은 to부정사·동명사 모두 허용 — '의미 차 없음' 동사군</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ⑧문장 -->
+      <div class="sentence-block">
+        <div><span class="sent-num">⑧</span><strong>감사하는 마음의 형성</strong></div>
+        <div class="eng-box">After this, Nick realized his accomplishments could inspire others and became grateful for his life.</div>
+        <div class="literal">
+          <div class="literal-en">After this, / Nick realized / (that) his accomplishments / could inspire others / and became grateful / for his life.</div>
+          <div class="literal-ko">이 일 이후, / Nick은 깨달았다 / 자신의 성취가 / 다른 사람들에게 영감을 줄 수 있다는 것을 / 그리고 감사하게 되었다 / 자신의 삶에 대해.</div>
+        </div>
+        <div class="grammar-list">
+          <div class="grammar-item">
+            <div class="gtitle">◆ 조동사 could (가능성·잠재력)</div>
+            <div class="gex">▶ <em>could inspire others</em>: '~할 수 있을 것이다'라는 잠재적 가능성</div>
+            <div class="gpoint">★ 과거 시제 문맥에서 <em>could</em>는 '능력·가능성'을 모두 의미; 단순 과거 능력만 묻는 함정 주의</div>
+          </div>
+          <div class="grammar-item">
+            <div class="gtitle">◆ become + 형용사 (2형식)</div>
+            <div class="gex">▶ <em>became grateful</em>: 'become'은 상태 변화의 2형식 동사</div>
+            <div class="gpoint">★ 보어 자리에 부사(<em>gratefully</em>) 사용 시 어법 오류 — 반드시 <strong>형용사</strong></div>
+          </div>
+          <div class="grammar-item">
+            <div class="gtitle">◆ grateful for + 명사 (~에 대해 감사하는)</div>
+            <div class="gex">▶ <em>grateful for his life</em>: 감정 형용사의 전치사 결합</div>
+            <div class="gpoint">★ <em>thankful for, sorry for, sad about</em> 등 감정 형용사+전치사 조합 빈출</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ⑨문장 -->
+      <div class="sentence-block">
+        <div><span class="sent-num">⑨</span><strong>일상 기술 적응</strong></div>
+        <div class="eng-box">Nick gradually figured out how to live a full life without limbs, adapting many of the daily skills limbed people accomplish without thinking.</div>
+        <div class="literal">
+          <div class="literal-en">Nick gradually figured out / how to live a full life / without limbs, / adapting many of the daily skills / (that) limbed people accomplish / without thinking.</div>
+          <div class="literal-ko">Nick은 점차 알아냈다 / 충만한 삶을 사는 방법을 / 사지 없이, / 일상 기술의 많은 것을 적응시키면서 / 사지가 있는 사람들이 해내는 / 생각 없이.</div>
+        </div>
+        <div class="grammar-list">
+          <div class="grammar-item">
+            <div class="gtitle">◆ 의문사 + to부정사 (how to V)</div>
+            <div class="gex">▶ <em>how to live a full life</em>: 'figured out'의 목적어 역할 (= how he could live)</div>
+            <div class="gpoint">★ 「의문사+to부정사」는 명사구 — <em>what to do, when to start, where to go</em> 등 출제 빈도 매우 높음</div>
+          </div>
+          <div class="grammar-item">
+            <div class="gtitle">◆ 분사구문 (adapting ~)</div>
+            <div class="gex">▶ <em>adapting many of the daily skills</em>: 「and (he) adapted」의 동시동작 분사구문</div>
+            <div class="gpoint">★ 주절 주어(Nick)가 능동적으로 '적응시키는' 행위자이므로 <strong>현재분사(adapting)</strong>; <em>adapted</em>로 바꾸면 오답</div>
+          </div>
+          <div class="grammar-item">
+            <div class="gtitle">◆ 목적격 관계대명사 생략</div>
+            <div class="gex">▶ <em>the daily skills (that) limbed people accomplish</em>: 'skills' 뒤 that 또는 which 생략</div>
+            <div class="gpoint">★ 「선행사 + 주어 + 동사」 구조이면 목적격 관계대명사 생략 가능</div>
+          </div>
+          <div class="grammar-item">
+            <div class="gtitle">◆ without + 동명사</div>
+            <div class="gex">▶ <em>without thinking</em>: '~하지 않고서'</div>
+            <div class="gpoint">★ <em>without</em> 뒤에는 동사가 올 경우 반드시 <strong>-ing</strong>(동명사). to부정사로 쓰면 오답</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ⑩문장 -->
+      <div class="sentence-block">
+        <div><span class="sent-num">⑩</span><strong>글쓰기 방법</strong></div>
+        <div class="eng-box">Nick writes with two toes on his left foot and a special grip that slides onto his big toe.</div>
+        <div class="literal">
+          <div class="literal-en">Nick writes / with two toes / on his left foot / and a special grip / that slides onto his big toe.</div>
+          <div class="literal-ko">Nick은 글을 쓴다 / 두 발가락을 사용해 / 왼발의 / 그리고 특별한 그립을 / 그의 엄지발가락에 끼워지는.</div>
+        </div>
+        <div class="grammar-list">
+          <div class="grammar-item">
+            <div class="gtitle">◆ 도구의 with</div>
+            <div class="gex">▶ <em>with two toes ... and a special grip</em>: 도구·수단 표현 (~을 사용하여)</div>
+            <div class="gpoint">★ 두 개의 도구가 <em>and</em>로 병렬 — both 도구가 with의 목적어</div>
+          </div>
+          <div class="grammar-item">
+            <div class="gtitle">◆ 주격 관계대명사 that</div>
+            <div class="gex">▶ <em>a special grip that slides onto his big toe</em>: 선행사(grip) 수식, 사물 선행사</div>
+            <div class="gpoint">★ 사물 선행사일 때 <em>that = which</em>; 주격이므로 동사 단수일치(<em>slides</em>) 확인</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ⑪문장 -->
+      <div class="sentence-block">
+        <div><span class="sent-num">⑪</span><strong>컴퓨터 사용 능력</strong></div>
+        <div class="eng-box">He knows how to use a computer and can type up to 45 words per minute using the 'heel and toe' method.</div>
+        <div class="literal">
+          <div class="literal-en">He knows / how to use a computer / and can type / up to 45 words per minute / using the 'heel and toe' method.</div>
+          <div class="literal-ko">그는 안다 / 컴퓨터 사용법을 / 그리고 입력할 수 있다 / 분당 최대 45단어를 / '발뒤꿈치와 발가락' 방법을 사용하여.</div>
+        </div>
+        <div class="grammar-list">
+          <div class="grammar-item">
+            <div class="gtitle">◆ up to + 수치 (최대 ~까지)</div>
+            <div class="gex">▶ <em>up to 45 words per minute</em>: 상한선을 나타내는 표현</div>
+            <div class="gpoint">★ <em>up to</em>는 '최대' / <em>more than</em>은 '~ 이상' — 의미 구분 빈출</div>
+          </div>
+          <div class="grammar-item">
+            <div class="gtitle">◆ 분사구문 (using ~)</div>
+            <div class="gex">▶ <em>using the 'heel and toe' method</em>: 동시 동작 또는 수단을 나타내는 분사구문</div>
+            <div class="gpoint">★ 주절 주어(He)가 능동적으로 '사용하는' 행위자 — <strong>using</strong>(현재분사)</div>
+          </div>
+          <div class="grammar-item">
+            <div class="gtitle">◆ 등위접속사 and의 병렬</div>
+            <div class="gex">▶ <em>knows ... and can type ...</em>: 동사구 두 개가 병렬 (knows / can type)</div>
+            <div class="gpoint">★ 병렬 구조에서 두 동사의 시제·조동사 형태 일치 확인</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ⑫문장 -->
+      <div class="sentence-block">
+        <div><span class="sent-num">⑫</span><strong>다양한 활동의 나열</strong></div>
+        <div class="eng-box">He has also learned to throw a tennis ball, get a glass of water, comb his hair, brush his teeth, and answer the phone, in addition to participating in golf, swimming, and even sky-diving.</div>
+        <div class="literal">
+          <div class="literal-en">He has also learned / to throw a tennis ball, / get a glass of water, / comb his hair, / brush his teeth, / and answer the phone, / in addition to participating in golf, / swimming, / and even sky-diving.</div>
+          <div class="literal-ko">그는 또한 배웠다 / 테니스 공을 던지는 것을, / 물 한 잔을 가져오는 것을, / 머리를 빗는 것을, / 이를 닦는 것을, / 그리고 전화를 받는 것을, / 골프에 참여하는 것에 더하여, / 수영, / 그리고 심지어 스카이다이빙까지.</div>
+        </div>
+        <div class="grammar-list">
+          <div class="grammar-item">
+            <div class="gtitle">◆ 현재완료 (has learned)</div>
+            <div class="gex">▶ <em>has also learned</em>: 과거부터 현재까지 누적된 경험·결과</div>
+            <div class="gpoint">★ <em>also</em>의 위치는 조동사(has)와 본동사(learned) 사이 — 부사 어순 빈출</div>
+          </div>
+          <div class="grammar-item">
+            <div class="gtitle">◆ to부정사 병렬구조</div>
+            <div class="gex">▶ <em>to throw ... (to) get ... (to) comb ... (to) brush ... and (to) answer ...</em>: 5개의 to부정사 병렬, 두 번째부터 to 생략</div>
+            <div class="gpoint">★ 병렬 항목 중 하나라도 동명사·동사원형이 섞이면 어법 오류</div>
+          </div>
+          <div class="grammar-item">
+            <div class="gtitle">◆ in addition to + 동명사</div>
+            <div class="gex">▶ <em>in addition to participating</em>: '~에 더하여'; <em>to</em>는 전치사이므로 뒤에 동명사</div>
+            <div class="gpoint">★ <em>look forward to, be used to, object to, in addition to</em> — 모두 to가 전치사인 함정 표현. <strong>동명사</strong> 필수</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ⑬문장 -->
+      <div class="sentence-block">
+        <div><span class="sent-num">⑬</span><strong>장애 극복과 모범적 삶</strong></div>
+        <div class="eng-box">Born without arms or legs, Nick overcame his disabilities to live a rich, independent, fulfilling, and 'ridiculously good' life while serving as a role model for anyone seeking true happiness.</div>
+        <div class="literal">
+          <div class="literal-en">Born without arms or legs, / Nick overcame his disabilities / to live a rich, independent, fulfilling, and 'ridiculously good' life / while serving as a role model / for anyone seeking true happiness.</div>
+          <div class="literal-ko">팔이나 다리 없이 태어났음에도, / Nick은 자신의 장애를 극복했다 / 풍요롭고, 독립적이고, 충만하고, '터무니없이 좋은' 삶을 살기 위해 / 역할 모델로 봉사하면서 / 진정한 행복을 추구하는 모든 이들을 위한.</div>
+        </div>
+        <div class="grammar-list">
+          <div class="grammar-item">
+            <div class="gtitle">◆ 분사구문(수동, Being 생략) — Born ~</div>
+            <div class="gex">▶ <em>Born without arms or legs</em>: 「(Being) Born ~」에서 Being 생략, '태어났음에도' 양보 의미</div>
+            <div class="gpoint">★ 분사구문 첫 단어가 과거분사면 <em>Being</em> 생략된 수동 분사구문 — 의미관계(시간/이유/양보) 파악 빈출</div>
+          </div>
+          <div class="grammar-item">
+            <div class="gtitle">◆ 부사절 축약 (while serving)</div>
+            <div class="gex">▶ <em>while serving as a role model</em>: 「while he served」에서 「주어+be」 생략</div>
+            <div class="gpoint">★ 종속절 주어가 주절 주어와 같으면 「while/when/if + -ing」로 축약 가능</div>
+          </div>
+          <div class="grammar-item">
+            <div class="gtitle">◆ 현재분사 후치수식 (seeking ~)</div>
+            <div class="gex">▶ <em>anyone seeking true happiness</em>: 「anyone who seeks」에서 축약</div>
+            <div class="gpoint">★ <em>anyone, anybody, those</em> 등의 -one/-body 대명사는 후치수식이 일반적</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ⑭문장 -->
+      <div class="sentence-block">
+        <div><span class="sent-num">⑭</span><strong>핵심 메시지 — 삶의 목적과 포기 금지</strong></div>
+        <div class="eng-box">Now an internationally successful motivational speaker, Nick eagerly spreads his central message: the most important goal is to find your life's purpose and to never give up, despite whatever difficulties or seemingly impossible odds stand in your way.</div>
+        <div class="literal">
+          <div class="literal-en">Now an internationally successful motivational speaker, / Nick eagerly spreads his central message: / the most important goal / is to find your life's purpose / and to never give up, / despite whatever difficulties or seemingly impossible odds / stand in your way.</div>
+          <div class="literal-ko">이제 국제적으로 성공한 동기부여 강연자로서, / Nick은 열정적으로 자신의 핵심 메시지를 전한다: / 가장 중요한 목표는 / 자신의 인생 목적을 찾는 것이며 / 결코 포기하지 않는 것이다, / 어떤 어려움이나 불가능해 보이는 역경이 / 당신의 길을 가로막는다 할지라도.</div>
+        </div>
+        <div class="grammar-list">
+          <div class="grammar-item">
+            <div class="gtitle">◆ 동격의 명사구 (Now ~ speaker, Nick ~)</div>
+            <div class="gex">▶ <em>Now an internationally successful motivational speaker, Nick</em>: 콤마로 분리된 명사구가 'Nick'을 동격으로 설명</div>
+            <div class="gpoint">★ 「(Being) Now ~ speaker」의 분사구문으로도 해석 가능 — 콤마+명사구 패턴 빈출</div>
+          </div>
+          <div class="grammar-item">
+            <div class="gtitle">◆ 주격보어로서의 to부정사 병렬</div>
+            <div class="gex">▶ <em>is to find ... and to never give up</em>: be동사 뒤 to부정사 두 개의 병렬 (보어 역할)</div>
+            <div class="gpoint">★ <em>to never give up</em>은 분리부정사(split infinitive) — 부사 never가 to와 동사 사이; 강조 효과</div>
+          </div>
+          <div class="grammar-item">
+            <div class="gtitle">◆ 복합관계형용사 whatever</div>
+            <div class="gex">▶ <em>whatever difficulties or ... odds stand in your way</em>: '어떤 ~이든'; whatever + 명사 + 동사</div>
+            <div class="gpoint">★ <em>whatever, whichever, however</em>의 양보절 용법 — 「whatever + 명사」는 「any + 명사」와 의미상 동일</div>
+          </div>
+          <div class="grammar-item">
+            <div class="gtitle">◆ despite + 명사구 (~에도 불구하고)</div>
+            <div class="gex">▶ <em>despite whatever difficulties or ... odds</em>: 양보 전치사</div>
+            <div class="gpoint">★ <em>despite</em>(전치사) ↔ <em>although</em>(접속사) — despite 뒤 절(주어+동사) 사용 시 어법 오류. 단, <em>whatever</em>가 이끄는 명사절은 명사 취급 가능</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== ③ 핵심단어 ===== -->
+  <div id="p3" class="panel">
+    <div class="card">
+      <div class="section-title">③ 핵심단어 · 표현</div>
+      <div class="vocab-grid">
+        <div class="vocab-item"><div class="vocab-word">mainstream</div><div class="vocab-meaning">주류의, 일반적인</div><div class="vocab-pos">adj./n.</div><div class="vocab-deriv">mainstreaming (n.)</div></div>
+        <div class="vocab-item"><div class="vocab-word">disability</div><div class="vocab-meaning">장애, 무능력</div><div class="vocab-pos">n.</div><div class="vocab-deriv">disabled (adj.), disable (v.)</div></div>
+        <div class="vocab-item"><div class="vocab-word">prevent A from -ing</div><div class="vocab-meaning">A가 ~하는 것을 막다</div><div class="vocab-pos">phrase</div><div class="vocab-deriv">prevention (n.)</div></div>
+        <div class="vocab-item"><div class="vocab-word">integrate</div><div class="vocab-meaning">통합하다, 편입시키다</div><div class="vocab-pos">v.</div><div class="vocab-deriv">integration (n.), integrated (adj.)</div></div>
+        <div class="vocab-item"><div class="vocab-word">limb</div><div class="vocab-meaning">팔다리, 사지</div><div class="vocab-pos">n.</div><div class="vocab-deriv">limbed (adj.), limbless (adj.)</div></div>
+        <div class="vocab-item"><div class="vocab-word">target</div><div class="vocab-meaning">표적, 목표</div><div class="vocab-pos">n./v.</div><div class="vocab-deriv">targeted (adj.)</div></div>
+        <div class="vocab-item"><div class="vocab-word">despair</div><div class="vocab-meaning">절망, 절망하다</div><div class="vocab-pos">n./v.</div><div class="vocab-deriv">desperate (adj.), desperately (adv.)</div></div>
+        <div class="vocab-item"><div class="vocab-word">turning point</div><div class="vocab-meaning">전환점</div><div class="vocab-pos">n. phrase</div><div class="vocab-deriv">—</div></div>
+        <div class="vocab-item"><div class="vocab-word">embrace</div><div class="vocab-meaning">받아들이다, 포용하다</div><div class="vocab-pos">v.</div><div class="vocab-deriv">embracement (n.)</div></div>
+        <div class="vocab-item"><div class="vocab-word">accomplishment</div><div class="vocab-meaning">성취, 업적</div><div class="vocab-pos">n.</div><div class="vocab-deriv">accomplish (v.), accomplished (adj.)</div></div>
+        <div class="vocab-item"><div class="vocab-word">inspire</div><div class="vocab-meaning">영감을 주다, 고무하다</div><div class="vocab-pos">v.</div><div class="vocab-deriv">inspiration (n.), inspirational (adj.)</div></div>
+        <div class="vocab-item"><div class="vocab-word">grateful</div><div class="vocab-meaning">감사하는</div><div class="vocab-pos">adj.</div><div class="vocab-deriv">gratitude (n.), gratefully (adv.)</div></div>
+        <div class="vocab-item"><div class="vocab-word">figure out</div><div class="vocab-meaning">알아내다, 이해하다</div><div class="vocab-pos">phrasal v.</div><div class="vocab-deriv">—</div></div>
+        <div class="vocab-item"><div class="vocab-word">adapt</div><div class="vocab-meaning">적응하다, 적응시키다</div><div class="vocab-pos">v.</div><div class="vocab-deriv">adaptation (n.), adaptive (adj.)</div></div>
+        <div class="vocab-item"><div class="vocab-word">in addition to</div><div class="vocab-meaning">~에 더하여</div><div class="vocab-pos">phrase</div><div class="vocab-deriv">addition (n.), additional (adj.)</div></div>
+        <div class="vocab-item"><div class="vocab-word">overcome</div><div class="vocab-meaning">극복하다</div><div class="vocab-pos">v.</div><div class="vocab-deriv">overcoming (n.)</div></div>
+        <div class="vocab-item"><div class="vocab-word">fulfilling</div><div class="vocab-meaning">충만한, 성취감 있는</div><div class="vocab-pos">adj.</div><div class="vocab-deriv">fulfill (v.), fulfillment (n.)</div></div>
+        <div class="vocab-item"><div class="vocab-word">role model</div><div class="vocab-meaning">역할 모델, 본보기</div><div class="vocab-pos">n. phrase</div><div class="vocab-deriv">—</div></div>
+        <div class="vocab-item"><div class="vocab-word">motivational</div><div class="vocab-meaning">동기 부여의</div><div class="vocab-pos">adj.</div><div class="vocab-deriv">motivate (v.), motivation (n.)</div></div>
+        <div class="vocab-item"><div class="vocab-word">odds</div><div class="vocab-meaning">역경, 가능성, 확률</div><div class="vocab-pos">n. (pl.)</div><div class="vocab-deriv">odd (adj.)</div></div>
+        <div class="vocab-item"><div class="vocab-word">stand in one's way</div><div class="vocab-meaning">~의 길을 가로막다</div><div class="vocab-pos">phrase</div><div class="vocab-deriv">—</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ④ 전문해석 ===== -->
+  <div id="p4" class="panel">
+    <div class="card">
+      <div class="section-title">④ 전문해석</div>
+      <div class="translation">
+        <p>Nick Vujicic은 1982년 호주 멜버른에서 태어났다. 그는 팔과 다리 없이 태어났는데, 다리가 없는 대신 두 개의 작은 발을 가지고 있었고 그중 한 발에는 두 개의 발가락이 있었다. 처음에는 정신적인 문제는 전혀 없었음에도 불구하고, 빅토리아 주의 법은 그가 신체적 장애를 이유로 일반 학교에 다니는 것을 허용하지 않았다. 그러나 그 법이 개정된 후, Nick은 일반 학교에 통합된 최초의 신체 장애 학생들 중 한 명이 되었다. 안타깝게도 그의 사지 부재는 그를 학교 폭력의 표적으로 만들었고, 그는 깊은 절망에 빠졌다. 그러던 중 결정적인 전환점이 찾아왔는데, 그것은 어머니가 심각한 장애를 안고 살아가는 한 남자에 관한 신문 기사를 그에게 보여주었을 때였다. Nick은 자신만 어려움을 겪는 것이 아님을 깨닫고, 자신의 사지 부재를 받아들이기 시작했다. 이후 그는 자신의 성취가 다른 사람들에게도 영감이 될 수 있다는 사실을 깨달으며 자신의 삶에 감사하게 되었다.</p>
+
+        <p>Nick은 사지가 없는 상태에서도 충만한 삶을 사는 방법을 점차 터득해 나가면서, 사지가 있는 사람들이 무심코 해내는 일상의 많은 기술들을 자신만의 방식으로 적응시켰다. 그는 왼발의 두 발가락과 엄지발가락에 끼우는 특별한 그립을 사용하여 글을 쓴다. 또한 컴퓨터 사용법을 익혔고, '발뒤꿈치와 발가락' 방식으로 분당 최대 45단어까지 입력할 수 있다. 이뿐만 아니라 테니스 공 던지기, 물 한 잔 가져오기, 머리 빗기, 이 닦기, 전화 받기를 배웠으며, 골프, 수영, 심지어 스카이다이빙에까지 참여한다.</p>
+
+        <p>팔과 다리 없이 태어났음에도, Nick은 자신의 장애를 극복하고 풍요롭고 독립적이며 충만하고 '터무니없이 좋은' 삶을 살고 있으며, 동시에 진정한 행복을 갈구하는 모든 이들의 본보기가 되어주고 있다. 이제 국제적으로 성공한 동기부여 강연자로서, Nick은 자신의 핵심 메시지를 열정적으로 전파한다 — 가장 중요한 목표는 자신의 인생 목적을 찾고, 어떤 어려움이나 불가능해 보이는 역경이 앞을 가로막더라도 결코 포기하지 않는 것이다.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ⑤ 주제·요지 ===== -->
+  <div id="p5" class="panel">
+    <div class="card">
+      <div class="section-title">⑤ 주제 · 요지 · 구조</div>
+
+      <div class="topic-section">
+        <div class="topic-label">주제 (Topic)</div>
+        <div class="topic-content">사지 없이 태어난 Nick Vujicic이 장애를 극복하고 동기부여 강연자로 활동하며 전하는 삶의 목적과 포기하지 않는 태도의 중요성</div>
+      </div>
+
+      <div class="topic-section">
+        <div class="topic-label">요지 (Main Idea)</div>
+        <div class="topic-content">Nick Vujicic은 신체적 장애와 학교 폭력, 절망을 모두 극복하여 자신의 삶에 감사하고 일상을 자율적으로 살아내는 방식을 터득했다. 그는 어떤 역경 속에서도 인생의 목적을 찾고 포기하지 않는 것이 가장 중요한 목표임을 전 세계에 전파하고 있다.</div>
+      </div>
+
+      <div class="topic-section">
+        <div class="topic-label">구조 흐름 (Structure)</div>
+        <div class="structure-flow">
+          <div class="flow-step"><div class="stage">도입</div><div>Nick의 출생과 신체적 특수성, 초기 학교 입학 거부의 배경 제시 (① ~ ④)</div></div>
+          <div class="flow-step"><div class="stage">전개 1</div><div>학교 폭력으로 인한 절망 → 어머니의 신문 기사가 가져온 인식 전환 → 자기 수용과 감사 (⑤ ~ ⑧)</div></div>
+          <div class="flow-step"><div class="stage">전개 2</div><div>일상 기술의 자율적 적응 사례 — 글쓰기, 타이핑, 다양한 활동 (⑨ ~ ⑫)</div></div>
+          <div class="flow-step"><div class="stage">결론</div><div>역할 모델로서의 삶과 핵심 메시지 — 인생의 목적을 찾고 결코 포기하지 말 것 (⑬ ~ ⑭)</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== ⑥ 변형문제 ===== -->
+  <div id="p6" class="panel">
+    <div class="card">
+      <div class="section-title">⑥ 변형문제 (인터랙티브 퀴즈)</div>
+
+      <!-- Q1: 주제 추론 -->
+      <div class="quiz-block">
+        <div><span class="quiz-num">Q 1</span></div>
+        <div class="quiz-q">다음 글의 주제로 가장 적절한 것은?</div>
+        <div class="options">
+          <button class="opt" onclick="checkAnswer(this, 'q1', false)">① 호주 빅토리아 주 장애인 교육법의 변천 과정</button>
+          <button class="opt" onclick="checkAnswer(this, 'q1', false)">② 신체적 장애가 청소년의 정신 건강에 미치는 부정적 영향</button>
+          <button class="opt" onclick="checkAnswer(this, 'q1', true)">③ 사지 없이 태어난 한 인물이 장애를 극복하고 전하는 삶의 메시지</button>
+          <button class="opt" onclick="checkAnswer(this, 'q1', false)">④ 동기부여 강연자가 갖추어야 할 자질과 사회적 영향력</button>
+          <button class="opt" onclick="checkAnswer(this, 'q1', false)">⑤ 신문 기사가 한 사람의 인생을 바꾼 사례 분석</button>
+        </div>
+        <div class="feedback" id="fb-q1"></div>
+        <button class="reset-btn" id="reset-q1" onclick="resetQuestion('q1')" style="display:none;">↺ 다시 풀기</button>
+      </div>
+
+      <!-- Q2: 빈칸 추론 -->
+      <div class="quiz-block">
+        <div><span class="quiz-num">Q 2</span></div>
+        <div class="quiz-q">다음 글의 빈칸에 들어갈 말로 가장 적절한 것은?</div>
+        <div class="quiz-passage">
+          However, a key turning point came when his mother showed him a newspaper article about a man dealing with a severe disability. Nick realized he wasn't <strong>______</strong> in his struggles and began to embrace his lack of limbs. After this, Nick realized his accomplishments could inspire others and became grateful for his life.
+        </div>
+        <div class="options">
+          <button class="opt" onclick="checkAnswer(this, 'q2', false)">① helpless</button>
+          <button class="opt" onclick="checkAnswer(this, 'q2', true)">② unique</button>
+          <button class="opt" onclick="checkAnswer(this, 'q2', false)">③ talented</button>
+          <button class="opt" onclick="checkAnswer(this, 'q2', false)">④ confident</button>
+          <button class="opt" onclick="checkAnswer(this, 'q2', false)">⑤ stubborn</button>
+        </div>
+        <div class="feedback" id="fb-q2"></div>
+        <button class="reset-btn" id="reset-q2" onclick="resetQuestion('q2')" style="display:none;">↺ 다시 풀기</button>
+      </div>
+
+      <!-- Q3: 어법 오류 -->
+      <div class="quiz-block">
+        <div><span class="quiz-num">Q 3</span></div>
+        <div class="quiz-q">다음 글의 밑줄 친 부분 중, 어법상 <strong>틀린</strong> 것은?</div>
+        <div class="quiz-passage">
+          Initially, a Victoria state law prevented Nick <span class="underline u1">①from attending</span> a mainstream school due to his physical disability. However, Nick became one of the first physically disabled students <span class="underline u2">②integrating</span> into a mainstream school once those laws changed. Unfortunately, his lack of limbs <span class="underline u3">③made</span> him a target for school bullies. Nick gradually figured out <span class="underline u4">④how to live</span> a full life without limbs, adapting many of the daily skills limbed people accomplish without <span class="underline u5">⑤thinking</span>.
+        </div>
+        <div class="options">
+          <button class="opt" onclick="checkAnswer(this, 'q3', false)">①</button>
+          <button class="opt" onclick="checkAnswer(this, 'q3', true)">②</button>
+          <button class="opt" onclick="checkAnswer(this, 'q3', false)">③</button>
+          <button class="opt" onclick="checkAnswer(this, 'q3', false)">④</button>
+          <button class="opt" onclick="checkAnswer(this, 'q3', false)">⑤</button>
+        </div>
+        <div class="feedback" id="fb-q3"></div>
+        <button class="reset-btn" id="reset-q3" onclick="resetQuestion('q3')" style="display:none;">↺ 다시 풀기</button>
+      </div>
+
+      <!-- Q4: 내용 불일치 -->
+      <div class="quiz-block">
+        <div><span class="quiz-num">Q 4</span></div>
+        <div class="quiz-q">Nick Vujicic에 관한 윗글의 내용과 <strong>일치하지 않는</strong> 것은?</div>
+        <div class="options">
+          <button class="opt" onclick="checkAnswer(this, 'q4', false)">① 1982년 호주 멜버른에서 팔과 다리 없이 태어났다.</button>
+          <button class="opt" onclick="checkAnswer(this, 'q4', false)">② 처음에는 빅토리아 주 법 때문에 일반 학교에 다닐 수 없었다.</button>
+          <button class="opt" onclick="checkAnswer(this, 'q4', true)">③ 어머니의 권유로 직접 신문 기사를 작성하여 절망을 극복했다.</button>
+          <button class="opt" onclick="checkAnswer(this, 'q4', false)">④ '발뒤꿈치와 발가락' 방식으로 분당 최대 45단어를 입력할 수 있다.</button>
+          <button class="opt" onclick="checkAnswer(this, 'q4', false)">⑤ 골프, 수영, 스카이다이빙 등 다양한 활동에 참여한다.</button>
+        </div>
+        <div class="feedback" id="fb-q4"></div>
+        <button class="reset-btn" id="reset-q4" onclick="resetQuestion('q4')" style="display:none;">↺ 다시 풀기</button>
+      </div>
+
+      <!-- Q5: 글의 순서 -->
+      <div class="quiz-block">
+        <div><span class="quiz-num">Q 5</span></div>
+        <div class="quiz-q">주어진 글 다음에 이어질 글의 순서로 가장 적절한 것은?</div>
+        <div class="quiz-passage">
+          <strong>[주어진 글]</strong> Nick Vujicic was born in Melbourne, Australia in 1982. Nick was born without arms and legs; he had no legs, but two small feet, one of which had two toes.
+        </div>
+        <div class="order-block"><span class="label">A</span>However, Nick became one of the first physically disabled students integrated into a mainstream school once those laws changed. Unfortunately, his lack of limbs made him a target for school bullies, and he fell into great despair.</div>
+        <div class="order-block"><span class="label">B</span>Initially, a Victoria state law prevented Nick from attending a mainstream school due to his physical disability, in spite of a lack of mental weakness.</div>
+        <div class="order-block"><span class="label">C</span>However, a key turning point came when his mother showed him a newspaper article about a man dealing with a severe disability. Nick realized he wasn't unique in his struggles and began to embrace his lack of limbs.</div>
+        <div class="options" style="margin-top:14px;">
+          <button class="opt" onclick="checkAnswer(this, 'q5', false)">① A — B — C</button>
+          <button class="opt" onclick="checkAnswer(this, 'q5', false)">② A — C — B</button>
+          <button class="opt" onclick="checkAnswer(this, 'q5', true)">③ B — A — C</button>
+          <button class="opt" onclick="checkAnswer(this, 'q5', false)">④ B — C — A</button>
+          <button class="opt" onclick="checkAnswer(this, 'q5', false)">⑤ C — A — B</button>
+        </div>
+        <div class="feedback" id="fb-q5"></div>
+        <button class="reset-btn" id="reset-q5" onclick="resetQuestion('q5')" style="display:none;">↺ 다시 풀기</button>
+      </div>
+
+      <!-- 서술형 1 -->
+      <div class="essay-block">
+        <div><span class="quiz-num">서술형 1</span></div>
+        <div class="essay-condition">※ 본문에서 알맞은 단어를 찾아 빈칸을 완성하시오. (각 빈칸 한 단어씩)</div>
+        <div class="essay-prompt">
+          Nick Vujicic overcame his physical <span class="essay-blank"></span><sub>(1)</sub> through his mother's
+          newspaper article and learned to live a fulfilling life by adapting daily skills such as writing, typing,
+          and various sports. As a motivational speaker, he urges everyone to find their life's
+          <span class="essay-blank"></span><sub>(2)</sub> and to never <span class="essay-blank"></span><sub>(3)</sub>
+          despite any difficulties.
+        </div>
+        <textarea class="essay-input" placeholder="(1) ___________  (2) ___________  (3) ___________"></textarea>
+        <button class="show-answer-btn" onclick="toggleAnswer('a1')">모범답안 보기</button>
+        <div class="model-answer" id="a1">
+          <span class="ma-label">▶ 모범답안</span>
+          (1) <strong>disability</strong> (또는 disabilities) &nbsp; (2) <strong>purpose</strong> &nbsp; (3) <strong>give up</strong><br>
+          <span style="font-size:13px; color:#5a7a4a;">※ 본문 키워드: disability(③⑬), life's purpose(⑭), never give up(⑭)</span>
+        </div>
+      </div>
+
+      <!-- 서술형 2 -->
+      <div class="essay-block">
+        <div><span class="quiz-num">서술형 2</span></div>
+        <div class="essay-condition">※ 윗글의 마지막 부분에 제시된 Nick Vujicic의 핵심 메시지를 본문에서 찾아 완전한 영어 문장으로 쓰시오. (단어 수 25~35단어)</div>
+        <div class="essay-prompt">
+          What is Nick Vujicic's central message according to the passage? Write your answer in one complete English sentence.
+        </div>
+        <textarea class="essay-input" placeholder="Write a complete English sentence (25-35 words)..."></textarea>
+        <button class="show-answer-btn" onclick="toggleAnswer('a2')">모범답안 보기</button>
+        <div class="model-answer" id="a2">
+          <span class="ma-label">▶ 모범답안 (예시)</span>
+          The most important goal is to find your life's purpose and to never give up, despite whatever difficulties or seemingly impossible odds stand in your way.
+          <br><br>
+          <span style="font-size:13px; color:#5a7a4a;">※ 본문 ⑭번 문장의 콜론(:) 이후 부분을 그대로 활용. 약 28단어. <em>'find purpose / never give up / despite difficulties'</em>의 세 핵심 키워드가 모두 포함되어야 만점.</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="acad">에듀케레 영수학원 · 바른학습관</div>
+  경남 양산시 물금읍 · 055.363.8010 · pf.kakao.com/_aEzYG<br>
+  © Educare English &amp; Math Academy — 경남외고 추가지문 분석 · Nick Vujicic
+</div>
+
+<script>
+  function showTab(evt, id) {
+    var panels = document.getElementsByClassName('panel');
+    for (var i = 0; i < panels.length; i++) panels[i].classList.remove('active');
+    var tabs = document.getElementsByClassName('tab');
+    for (var j = 0; j < tabs.length; j++) tabs[j].classList.remove('active');
+    document.getElementById(id).classList.add('active');
+    evt.currentTarget.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  var explanations = {
+    'q1': '글 전체가 Nick Vujicic의 출생 → 절망 → 자기 수용 → 일상 적응 → 동기부여 메시지 전파의 흐름이므로, 핵심은 "장애 극복과 삶의 메시지"이다.',
+    'q2': '바로 앞 문장에서 "심각한 장애를 가진 다른 사람의 기사"를 본 후의 깨달음이므로, "자신만 그런 어려움을 겪는 것이 아니다(unique하지 않다)"가 자연스럽다.',
+    'q3': '② <em>integrating</em> → <em>integrated</em>. students는 "통합되는" 대상(수동)이므로 과거분사가 정답. 능동의 -ing이 오면 어법 오류.',
+    'q4': '③ 본문에서는 어머니가 "신문 기사를 보여주었다(showed him a newspaper article)"고 했지, Nick이 직접 기사를 작성한 것이 아니다.',
+    'q5': '주어진 글(출생) → B(처음에 입학 거부) → A(법 개정 후 입학, 그러나 학교 폭력) → C(어머니의 기사 → 전환점)의 시간 흐름이 자연스럽다.'
+  };
+
+  function checkAnswer(btn, qid, isCorrect) {
+    var allOpts = btn.parentNode.querySelectorAll('.opt');
+    for (var i = 0; i < allOpts.length; i++) {
+      allOpts[i].disabled = true;
+      allOpts[i].onclick = null;
+    }
+    var fb = document.getElementById('fb-' + qid);
+    var resetBtn = document.getElementById('reset-' + qid);
+    if (isCorrect) {
+      btn.classList.add('correct');
+      fb.className = 'feedback correct show';
+      fb.innerHTML = '<strong>✓ 정답입니다!</strong><br>' + explanations[qid];
+    } else {
+      btn.classList.add('wrong');
+      for (var j = 0; j < allOpts.length; j++) {
+        if (allOpts[j].getAttribute('onclick') && allOpts[j].getAttribute('onclick').indexOf('true') !== -1) {
+          allOpts[j].classList.add('reveal');
+        }
+      }
+      fb.className = 'feedback wrong show';
+      fb.innerHTML = '<strong>✗ 오답입니다.</strong><br>' + explanations[qid];
+    }
+    resetBtn.style.display = 'inline-block';
+  }
+
+  function resetQuestion(qid) {
+    var fb = document.getElementById('fb-' + qid);
+    var resetBtn = document.getElementById('reset-' + qid);
+    fb.className = 'feedback';
+    fb.innerHTML = '';
+    resetBtn.style.display = 'none';
+    var quizBlock = resetBtn.parentNode;
+    var allOpts = quizBlock.querySelectorAll('.opt');
+    for (var i = 0; i < allOpts.length; i++) {
+      allOpts[i].classList.remove('correct', 'wrong', 'reveal');
+      allOpts[i].disabled = false;
+      var origText = allOpts[i].textContent;
+      var isCorr = allOpts[i].getAttribute('data-correct') === 'true';
+    }
+    // 재설정: onclick 다시 부여
+    var optionButtons = quizBlock.getElementsByClassName('opt');
+    var qNum = qid.replace('q', '');
+    var correctMap = { 'q1': 2, 'q2': 1, 'q3': 1, 'q4': 2, 'q5': 2 };
+    for (var k = 0; k < optionButtons.length; k++) {
+      (function(idx, q){
+        var isC = (idx === correctMap[q]);
+        optionButtons[idx].onclick = function() { checkAnswer(this, q, isC); };
+      })(k, qid);
+    }
+  }
+
+  function toggleAnswer(id) {
+    var el = document.getElementById(id);
+    el.classList.toggle('show');
+  }
+</script>
+
+</body>
+</html>
